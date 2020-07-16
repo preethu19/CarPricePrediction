@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+
+			<div class="contact1-pic js-tilt" data-tilt>
+				<h3>{{ prediction_text }}<h3>
+				<img src="{{ url_for('static', filename='images/250328.jpg') }}" alt="IMG">
+			</div>
+
+			<form class="contact1-form validate-form" action="{{ url_for('predict')}}" method="post">
+				<span class="contact1-form-title">
+					Car Selling Price Prediction 
+				</span>
+
+				<div class="wrap-input1">
+					<input class="input1" type="number" name="Year" placeholder="Year of buying" required="required">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1">
+					<input class="input1" type="number" name="Present_Price" placeholder="What is the Showroom Price?(In lakhs)">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1">
+					<input class="input1" type="number" placeholder="How Many Kilometers Drived?" name="Kms_Driven">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1">
+					<input class="input1" type="number" name="Owner" placeholder="How much owners previously had the car(0 or 1 or 3) ?">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<h5>What Is the Fuel type?</h5><br>
+					<select class="input1" name="Fuel_Type_Petrol" id="fuel" required="required">
+		                <option value="Petrol">Petrol</option>
+		                <option value="Diesel">Diesel</option>
+		                <option value="Diesel">CNG</option>
+		            </select>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<h5>Are you A Dealer or Individual</h5><br>
+					<select class="input1" name="Seller_Type_Individual" id="resea" required="required">
+                		<option value="Dealer">Dealer</option>
+                		<option value="Individual">Individual</option>
+            		</select>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Name is required">
+					<h5>Transmission type</h5><br>
+					<select class="input1" name="Transmission_Mannual" id="research" required="required">
+                		<option value="Mannual">Manual Car</option>
+                		<option value="Automatic">Automatic Car</option>
+            		</select>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>
+							Calculate the Selling Price
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
